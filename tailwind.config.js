@@ -23,11 +23,14 @@ module.exports = {
         'pastel-green-dark': '#019144',
         'pastel-green-darker': '#006b32',
         'red': '#ed1c24',
+        'light-red': '#f25a5f',
         'yellow': '#FFDE17',
+        'light-yellow': '#fae45f',
         'dark-yellow': '#f5d307',
         'orange': '#FF914D',
-        'light-orange': '#f7ab7c',
+        'light-orange': '#f59d67',
         'lavender': '#cb6ce6',
+        'light-lavender': '#d191e3',
       }
     },
   }

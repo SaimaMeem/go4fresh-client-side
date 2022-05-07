@@ -22,7 +22,7 @@ const WhyChooseUs = () => {
                     </p>
                 </div>
                 <div className='flex items-center justify-center py-5 md:py-20'>
-                    <img src={roundLogo} className="h-72 w-72 rounded-full shadow-lg border-4 border-white p-5" alt="" />
+                    <img src={roundLogo} className="h-72 w-72 rounded-full border-4 border-white p-5 hover:shadow-lg transition duration-300 ease-in-out" alt="" />
                 </div>
                 <div className='py-5 md:py-20'>
                     <p className="flex items-center justify-center mb-4 text-xl font-bold">
