@@ -23,7 +23,10 @@ module.exports = {
         'pastel-green-dark': '#019144',
         'pastel-green-darker': '#006b32',
         'red': '#ed1c24',
-        'yellow': '#ed1c24',
+        'yellow': '#FFDE17',
+        'dark-yellow': '#f5d307',
+        'orange': '#FF914D',
+        'light-orange': '#f7ab7c',
         'lavender': '#cb6ce6',
       }
     },
