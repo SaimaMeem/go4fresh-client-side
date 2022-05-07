@@ -20,6 +20,8 @@ module.exports = {
         'off-white': '#EEECEA',
         'off-white-darker': '#dedddc',
         'pastel-green': '#00a14b',
+        'pastel-green-dark': '#019144',
+        'pastel-green-darker': '#006b32',
         'red': '#ed1c24',
         'yellow': '#ed1c24',
         'lavender': '#cb6ce6',

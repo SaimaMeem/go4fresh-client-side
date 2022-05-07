@@ -28,7 +28,7 @@ const Header = () => {
                                     <Link
                                         className="nav-link text-dark-blue"
                                         to='/'
-                                    >Items</Link>
+                                    >Fruits and Vegtables</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                 </li>
