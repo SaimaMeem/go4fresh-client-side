@@ -34,13 +34,13 @@ const Banner = () => {
                 {/* <!-- Inner --> */}
                 <div className="carousel-inner relative w-full overflow-hidden">
                     {/* <!-- Single item --> */}
-                    <div className="carousel-item active relative float-left w-full">
+                    <div className="carousel-item active relative float-left w-full z-10">
                         <img
                             src={banner2}
                             className="block w-full object-cover h-96 md:h-[33rem]"
                             alt="Fruits and Vegetables"
                         />
-                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-32 md:top-52 lg:top-44 -left-0 pl-4 lg:pl-10">
+                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-32 md:top-60 lg:top-56 -left-0 pl-4 lg:pl-10">
                             <h5 className="lg:font-headings lg:text-5xl  text-md md:text-3xl font-semibold">Authentic and Organic</h5>
                             <p className='pt-2 text-sm lg:text-2xl md:text-lg font-medium'>We spend many hours sourcing the best Organic and Natural produce for our customers.</p>
                         </div>
@@ -52,7 +52,8 @@ const Banner = () => {
                             className="block w-full object-cover h-96 md:h-[33rem]"
                             alt="Fruits and Vegetables"
                         />
-                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-28 md:top-44 lg:top-44 -left-0 pl-4 lg:pl-10">
+                        
+                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-32 md:top-60 lg:top-56  -left-0 pl-4 lg:pl-10">
                             <h5 className="lg:font-headings lg:text-5xl  text-md md:text-3xl font-semibold">Fruits, the Best Dessert</h5>
                             <p className='pt-2 text-sm lg:text-2xl md:text-lg font-medium'>We deliver our products directly from the farm to customers on the same day they are harvested.</p>
                         </div>
@@ -64,7 +65,7 @@ const Banner = () => {
                             className="block w-full object-cover h-96 md:h-[33rem]"
                             alt="Fruits and Vegetables"
                         />
-                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-28 md:top-40 lg:top-44 -left-0 pl-4 lg:pl-10">
+                        <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-32 md:top-60 lg:top-56 -left-0 pl-4 lg:pl-10">
                             <h5 className="lg:font-headings lg:text-5xl  text-md md:text-3xl font-semibold">The Freshest of Vegetables</h5>
                             <p className='pt-2 text-sm lg:text-2xl md:text-lg font-medium'>Our promise is to bring our customers the freshest and  healthiestproduce available.</p>
                         </div>
