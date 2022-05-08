@@ -6,14 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'tw-elements';
 import 'flowbite';
+import { HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <HelmetProvider>
   <BrowserRouter>
     <React.StrictMode>
       <App />
     </React.StrictMode>
   </BrowserRouter>
+  </HelmetProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
