@@ -16,16 +16,16 @@ const Footer = () => {
                         <FontAwesomeIcon icon={faFacebookF}></FontAwesomeIcon>
                     </a>
                     <a href="#!" className="mr-6 text-dark-blue">
-                    <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faTwitter}></FontAwesomeIcon>
                     </a>
                     <a href="#!" className="mr-6 text-dark-blue">
-                    <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
                     </a>
                     <a href="#!" className="mr-6 text-dark-blue">
-                    <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
                     </a>
                     <a href="#!" className="mr-6 text-dark-blue">
-                    <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon>
+                        <FontAwesomeIcon icon={faLinkedinIn}></FontAwesomeIcon>
                     </a>
                 </div>
             </div>
@@ -33,32 +33,28 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3  gap-2">
                     <div className="">
                         <h6 className="uppercase font-bold mb-4 flex justify-center">
-                            Useful links
+                           Customer Service
                         </h6>
                         <p className="mb-4 flex justify-center">
-                            <a href="#!" className="text-dark-blue">Home</a>
+                            <a href="#!" className="text-dark-blue">Contact Us</a>
                         </p>
                         <p className="mb-4 flex justify-center">
-                            <a href="#!" className="text-dark-blue">Items</a>
-                        </p>
-
-                        <p className="mb-4 flex justify-center">
-                            <a href="#!" className="text-dark-blue">Another</a>
+                            <a href="#!" className="text-dark-blue">FAQs</a>
                         </p>
                     </div>
                     <div className="">
                         <h6 className="uppercase font-bold mb-4 flex justify-center">
-                            Products
+                            About Go4Fresh
                         </h6>
                         <p className="flex justify-center mb-4">
-                            <a href="#!" className="text-dark-blue">Vision and Mission</a>
+                            <a href="#!" className="text-dark-blue">Why Choose Us</a>
                         </p>
                         <p className="flex justify-center mb-4">
                             <a href="#!" className="text-dark-blue">Testimonials</a>
                         </p>
-                        <p className="flex justify-center mb-4">
-                            <a href="#!" className="text-dark-blue">Blogs</a>
-                        </p>
+                        {/* <p className="mb-4 flex justify-center">
+                            <a href="#!" className="text-dark-blue">Another</a>
+                        </p> */}
                     </div>
 
                     <div className="">
@@ -75,7 +71,7 @@ const Footer = () => {
                         </p>
                         <p className="flex items-center justify-center mb-4">
                             <FontAwesomeIcon icon={faPhone}></FontAwesomeIcon>
-                            &nbsp; &nbsp;+ 01 234 567 88
+                            &nbsp; &nbsp;+ 01 432 234 77
                         </p>
                     </div>
                 </div>

@@ -30,6 +30,9 @@ module.exports = {
         'orange': '#FF914D',
         'light-orange': '#f59d67',
         'lavender': '#cb6ce6',
+        'lavender-dark': '#c14be3',
+        'lavender-darker': '#9e2abf',
+        'lavender-darkest': '#781f91',
         'light-lavender': '#d191e3',
       }
     },

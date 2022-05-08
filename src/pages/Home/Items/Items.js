@@ -4,7 +4,7 @@ import Item from '../Item/Item';
 const Items = () => {
     const [items, setItems] = useState([]);
     useEffect(() => {
-        fetch('items.json')
+        fetch('http://localhost:5000/items')
             .then(res => res.json())
             .then(data => setItems(data))
 
@@ -16,6 +16,10 @@ const Items = () => {
                 {
                     items.map(item => <Item key={item._id} item={item}></Item>)
                 }
+            </div>
+            <div className='my-5'>
+                <button type="button" data-mdb-ripple="true"
+                    data-mdb-ripple-color="light" className=" inline-block px-10 py-4 bg-lavender-dark text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-lavender-darker hover:shadow-lg focus:bg-lavender-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lavender-darkest active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</button>
             </div>
         </section>
     );

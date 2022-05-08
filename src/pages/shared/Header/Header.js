@@ -36,14 +36,6 @@ const Header = () => {
                                     <Link
                                         className="nav-link text-dark-blue"
                                         to='/'
-                                    >Testimonials</Link>
-                                    <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
-                                    <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
-                                </li>
-                                <li className="nav-item p-2 relative w-max two hover:font-bold  active:bg-darker-blue px-3 py-2 rounded-md">
-                                    <Link
-                                        className="nav-link text-dark-blue"
-                                        to='/'
                                     >Blogs</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
@@ -52,10 +44,11 @@ const Header = () => {
                                     <Link
                                         className="nav-link text-dark-blue"
                                         to='/'
-                                    >Another</Link>
+                                    >About Us</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                 </li>
+
                             </ul>
                             {/* <!-- Left links --> */}
                         </div>
