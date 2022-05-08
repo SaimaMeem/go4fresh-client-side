@@ -4,7 +4,7 @@ import React from 'react';
 import roundLogo from '../../../images/logowithname.png'
 const WhyChooseUs = () => {
     return (
-        <section className='text-dark-blue'>
+        <section className='text-dark-blue my-14' id='whychooseus'>
             <h3 className="leading-tight text-3xl font-bold my-10 text-dark-blue">Why Choose Go4Fresh</h3>
             <div className="h-auto bg-light-orange grid grid-cols-1 md:grid-cols-3 justify-between items-center">
                 <div className=' py-5 md:py-20 px-10'>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faHome, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faGoogle, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -47,10 +48,10 @@ const Footer = () => {
                             About Go4Fresh
                         </h6>
                         <p className="flex justify-center mb-4">
-                            <a href="#!" className="text-dark-blue">Why Choose Us</a>
+                            <Link to="/home#whychooseus" className="text-dark-blue">Why Choose Us</Link>
                         </p>
                         <p className="flex justify-center mb-4">
-                            <a href="#!" className="text-dark-blue">Testimonials</a>
+                            <Link to="/home#testimonials" className="text-dark-blue">Testimonials</Link>
                         </p>
                         {/* <p className="mb-4 flex justify-center">
                             <a href="#!" className="text-dark-blue">Another</a>

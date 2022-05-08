@@ -4,7 +4,7 @@ import banner2 from '../../../images/banner/2.jpg';
 import banner3 from '../../../images/banner/3.jpg';
 const Banner = () => {
     return (
-        <div>
+        <div className='pt-24'>
             <div
                 id="carouselDarkVariant"
                 className="carousel slide carousel-fade carousel-dark relative"

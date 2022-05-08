@@ -5,7 +5,7 @@ import customer3 from '../../../images/customers/6.jpg';
 import customer4 from '../../../images/customers/7.jpg';
 const Testimonials = () => {
     return (
-        <section className='text-dark-blue my-16'>
+        <section className='text-dark-blue my-14' id='testimonials'>
             <h3 className="leading-tight text-3xl font-bold my-10 text-dark-blue">Testimonials</h3>
 
             <div className="mb-20 text-dark-blue px-20">
