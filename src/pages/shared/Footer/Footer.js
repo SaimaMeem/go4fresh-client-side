@@ -6,8 +6,8 @@ import { faFacebookF, faGoogle, faInstagram, faLinkedinIn, faTwitter } from '@fo
 const Footer = () => {
     let year = new Date().getFullYear();
     return (
-        <footer className="text-center lg:text-left bg-off-white text-dark-blue">
-            <div className="flex justify-center items-center lg:justify-evenly p-6 border-t border-gray-300">
+        <footer className="absolute w-full flex flex-col mt-auto text-center lg:text-left bg-off-white text-dark-blue">
+            <div className="w-full flex flex-wrap  justify-center items-center lg:justify-evenly p-6 border-t border-gray-300">
 
                 <div className="mr-12 hidden lg:block">
                     <span className='font-bold'>Get connected with us on social networks:</span>
