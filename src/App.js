@@ -9,6 +9,7 @@ import Testimonials from './pages/Home/Testimonials/Testimonials';
 import WhyChooseUs from './pages/Home/WhyChooseUs/WhyChooseUs';
 import ItemDetail from './pages/ItemDetail/ItemDetail';
 import Login from './pages/Login/Login/Login';
+import Register from './pages/Login/Register/Register';
 import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import ManageInventories from './pages/ManageInventories/ManageInventories';
 import NotFound from './pages/NotFound/NotFound';

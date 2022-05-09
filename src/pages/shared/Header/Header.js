@@ -11,28 +11,40 @@ import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
 const Header = () => {
     const navigate = useNavigate();
-    const [user] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
+    console.log(user?.displayName);
     const logOut = () => {
         signOut(auth);
         navigate('/login');
     };
+    if(loading){
+        console.log("loading");
+//         <section className="pt-36 pb-28">
+//         <div className="text-center">
+//             <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
+// " role="status">
+//                 <span className="visually-hidden">Loading...</span>
+//             </div>
+//         </div>
+//     </section>
+    }
     return (
         <div className='relative'>
             <nav
                 className="fixed w-full flex items-center justify-between py-3  text-dark-blue bg-off-white shadow-lg navbar navbar-expand-lg navbar-dark h-24 font-semibold z-40">
                 <div className="container-fluid w-full flex  items-center justify-between sm:justify-between px-6 relative">
-                
-                <button
-                                className="navbar-toggler text-dark-blue border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
-                                type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation"
-                            >
-                                <FontAwesomeIcon icon={faBars} />
-                            </button>
+
+                    <button
+                        className="navbar-toggler text-dark-blue border-0 hover:shadow-none hover:no-underline py-2 px-2.5 bg-transparent focus:outline-none focus:ring-0 focus:shadow-none focus:no-underline"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <FontAwesomeIcon icon={faBars} />
+                    </button>
                     <div className="container-fluid">
                         <Link className="flex items-center text-dark-blue mt-2 lg:mt-0 ml:20 pl-6 sm:pl-16 lg:ml-0" to="/home">
                             <img className="hidden mr-2 sm:block" src={brandLogo} style={{ height: "60px" }} alt="" loading="lazy" />
@@ -91,56 +103,57 @@ const Header = () => {
                     {/* <!-- Right elements --> */}
                     <div className='container-fluid relative'>
                         <div className="flex items-center">
-                        {
-                            user ? <div className="dropdown relative">
-                                <Link
-                                    className="dropdown-toggle flex items-center hidden-arrow  rounded-full focus:outline-none hover:font-bold"
-                                    to='/'
-                                    id="dropdownMenuButton2"
-                                    role="button"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user.displayName}&nbsp;&nbsp;</div>
-                                    <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> &nbsp; &nbsp;
-                                    <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
-                                </Link>
-                                <ul
-                                    className="dropdown-menu min-w-max absolute hidden bg-off-white text-base z-110 float-left py-2 list-none text-left rounded-lg shadow-xl mt-1 m-0 bg-clip-padding border-none left-auto right-0 w-full"
-                                    aria-labelledby="dropdownMenuButton2"
-                                >
-                                    <li>
-                                        <Link
-                                            className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
-                                            to='/'>My Items</Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
-                                            to='/'>Manage Items</Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
-                                            to='/'>Add New Item</Link>
-                                    </li>
-                                    <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25" />
-                                    <li>
-                                        <button to='' onClick={logOut}
-                                            className="text-left dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"> SignOut &nbsp;
-                                        <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon></button>
-                                    </li>
-                                </ul>
-                            </div> 
-                            :
-                            
-                            <Link
-                                to='/login'
-                                className="flex items-center hidden-arrow  rounded-full focus:outline-none hover:font-bold">
-                                <div className='hidden sm:inline-block'> &nbsp;&nbsp;Login&nbsp;&nbsp;</div>
-                                <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon>
-                            </Link>
-                        }
-                            
+                            {
+                                user ? <div className="dropdown relative">
+                                    <Link
+                                        className="dropdown-toggle flex items-center hidden-arrow  rounded-full focus:outline-none hover:font-bold"
+                                        to='/'
+                                        id="dropdownMenuButton2"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>&nbsp; &nbsp;
+                                        {user?.photoURL && <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" /> 
+                                        }
+                                        <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
+                                    </Link>
+                                    <ul
+                                        className="dropdown-menu min-w-max absolute hidden bg-off-white text-base z-110 float-left py-2 list-none text-left rounded-lg shadow-xl mt-1 m-0 bg-clip-padding border-none left-auto right-0 w-full"
+                                        aria-labelledby="dropdownMenuButton2"
+                                    >
+                                        <li>
+                                            <Link
+                                                className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
+                                                to='/'>My Items</Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
+                                                to='/manageinventories'>Manage Items</Link>
+                                        </li>
+                                        <li>
+                                            <Link
+                                                className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
+                                                to='/additem'>Add New Item</Link>
+                                        </li>
+                                        <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25" />
+                                        <li>
+                                            <button to='' onClick={logOut}
+                                                className="text-left dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"> SignOut &nbsp;
+                                                <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon></button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                    :
+
+                                    <Link
+                                        to='/login'
+                                        className="flex items-center hidden-arrow  rounded-full focus:outline-none hover:font-bold">
+                                        <div className='hidden sm:inline-block'> &nbsp;&nbsp;Login&nbsp;&nbsp;</div>
+                                        <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon>
+                                    </Link>
+                            }
+
 
                         </div>
 
