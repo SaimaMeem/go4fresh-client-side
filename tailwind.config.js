@@ -22,7 +22,7 @@ module.exports = {
         'pastel-green': '#00a14b',
         'pastel-green-dark': '#019144',
         'pastel-green-darker': '#006b32',
-        'red': '#ed1c24',
+        'redd': '#ed1c24',
         'light-red': '#f25a5f',
         'yellow': '#FFDE17',
         'light-yellow': '#fae45f',

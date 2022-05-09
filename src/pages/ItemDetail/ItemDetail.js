@@ -1,3 +1,6 @@
+import {  } from '@fortawesome/free-regular-svg-icons';
+import { faArrowRight, faListCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -94,8 +97,8 @@ const ItemDetail = () => {
                         <div className='grid grid-cols-1 lg:grid-cols-2'>
                             <h5 className="text-lg font-bold mb-2">Quantity:  <span className='text-lg font-semibold'>{quantity}</span>
                                 <button onClick={() => { decreaseQuantity(_id) }} type="button" data-mdb-ripple="true"
-                                    data-mdb-ripple-color="light" className="mx-5 inline-block px-3 py-1.5 bg-orange-dark text-white font-bold text-xs leading-tight rounded shadow-md hover:bg-orange-darker hover:shadow-lg focus:bg-orange-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-darkest active:shadow-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed" disabled={quantity === '0'}  >Deliver</button>
-                                {quantity === '0' && <p className='text-red'>SOLD OUT</p>}
+                                    data-mdb-ripple-color="light" className="mx-5 inline-block px-3 py-1.5 bg-orange-dark text-white font-bold text-xs leading-tight rounded shadow-md hover:bg-orange-darker hover:shadow-lg focus:bg-orange-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-darkest active:shadow-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed" disabled={quantity === '0'} > Deliver &nbsp;<FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon> </button>
+                                {quantity === '0' && <p className='text-redd'>SOLD OUT</p>}
                             </h5>
                             <div className="accordion" id="accordionExample">
                                 <div className="accordion-item bg-white border border-gray-200 rounded-0 mt-5 sm:mt-0">
@@ -109,7 +112,7 @@ const ItemDetail = () => {
                                                 <div className="mb-3 xl:w-96 grid grid-cols-1 lg:grid-cols-2">
                                                     <input type="text" className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="addQtyInput" placeholder="Enter Quantity" />
                                                     <button onClick={() => { addQuantity(_id) }} type="submit" data-mdb-ripple="true"
-                                                        data-mdb-ripple-color="light" className="ml-auto mt-4 lg:mt-0 inline-block px-8 py-1.5 bg-orange-dark text-white font-bold text-xs leading-tight rounded shadow-md hover:bg-orange-darker hover:shadow-lg focus:bg-orange-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-darkest active:shadow-lg transition duration-150 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed" >Add</button>
+                                                        data-mdb-ripple-color="light" className="ml-auto mt-4 lg:mt-0 inline-block px-8 py-1.5 bg-orange-dark text-white font-bold text-xs leading-tight rounded shadow-md hover:bg-orange-darker hover:shadow-lg focus:bg-orange-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-darkest active:shadow-lg transition duration-150 ease-in-out" > <FontAwesomeIcon icon={faPlus}></FontAwesomeIcon> &nbsp;Add</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,7 +125,7 @@ const ItemDetail = () => {
             </div>
             <div className='my-10'>
                 <Link to='/manageinventories' type="button" data-mdb-ripple="true"
-                    data-mdb-ripple-color="light" className=" inline-block px-10 py-4 bg-lavender-dark text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-lavender-darker hover:shadow-lg focus:bg-lavender-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lavender-darkest active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</Link>
+                    data-mdb-ripple-color="light" className=" inline-block px-10 py-4 bg-lavender-dark text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-lavender-darker hover:shadow-lg focus:bg-lavender-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lavender-darkest active:shadow-lg transition duration-150 ease-in-out">Manage Inventories&nbsp;&nbsp;&nbsp;&nbsp;<FontAwesomeIcon icon={faListCheck}></FontAwesomeIcon></Link>
             </div>
         </section>
     );

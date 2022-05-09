@@ -1,7 +1,6 @@
 [
     {
-      "_id": "62764ab6d9a1427b4c2e3506",
-      "name": "Tomato",
+    "name": "Tomato",
       "image": "https://i.ibb.co/1ryMqKg/tomato.jpg",
       "price": "$4.31",
       "quantity": "2500",
@@ -9,8 +8,7 @@
       "supplier_name": "Bird Kelley"
     },
     {
-      "_id": "62764ab64e3169a8b8f298c5",
-      "name": "Yellow Capsicum",
+    "name": "Yellow Capsicum",
       "image": "https://i.ibb.co/gWHf1BD/yellow-capsicum.jpg",
       "price": "$5.59",
       "quantity": "500",
@@ -18,8 +16,8 @@
       "supplier_name": "Lilia Calhoun"
     },
     {
-      "_id": "62764ab6137a8f85ac0341b6",  
-      "name": "Carrot",
+      
+"name": "Carrot",
       "image": "https://i.ibb.co/0BSnX0X/carrot.jpg",
       "price": "$3.73",
       "quantity": "3000",
@@ -27,8 +25,8 @@
       "supplier_name": "Mildred Summers"
     },
     {
-      "_id": "62764ab693a49c075aa064ed",  
-      "name": "Watermelon",
+      
+"name": "Watermelon",
       "image": "https://i.ibb.co/JB2MZh4/watermelon.jpg",
       "price": "$15",
       "quantity": "1000",
@@ -36,8 +34,7 @@
       "supplier_name": "Charity Strickland"
     },
     {
-      "_id": "62764ab6149cffbe715a5580",
-      "name": "Banana",
+    "name": "Banana",
       "image": "https://i.ibb.co/Sc7Y6WX/banana.jpg",
       "price": "$2.05",
       "quantity": "4000",
@@ -45,7 +42,6 @@
       "supplier_name": "Barbra Parks"
     },
     {
-        "_id": "62764b2a131f49870177ccbf",
         "name": "Blood Orange",
         "image": "https://i.ibb.co/pyqQ4Wt/orange.jpg",
         "price": "$4.55",
@@ -54,7 +50,6 @@
         "supplier_name": "Barbra Parks"
       },
       {
-        "_id": "62764b2a131f42560177ccbf",
         "name": "Pineapple",
         "image": "https://i.ibb.co/GTrCB6D/pineapple.jpg",
         "price": "$8.00",
@@ -63,7 +58,6 @@
         "supplier_name": "John Parkinson"
       },
     {
-        "_id": "62764b2a131f42560187dccbf",
         "name": "Eggplant",
         "image": "https://i.ibb.co/8YVc06n/eggplant.jpg",
         "price": "$1.55",
