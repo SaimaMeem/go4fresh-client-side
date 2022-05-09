@@ -8,6 +8,8 @@ import Items from './pages/Home/Items/Items';
 import Testimonials from './pages/Home/Testimonials/Testimonials';
 import WhyChooseUs from './pages/Home/WhyChooseUs/WhyChooseUs';
 import ItemDetail from './pages/ItemDetail/ItemDetail';
+import Login from './pages/Login/Login/Login';
+import RequireAuth from './pages/Login/RequireAuth/RequireAuth';
 import ManageInventories from './pages/ManageInventories/ManageInventories';
 import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/shared/Footer/Footer';
@@ -21,12 +23,24 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/fruits&vegetables' element={<Items></Items>}></Route>
-        <Route path='/fruits&vegetables/:itemId' element={<ItemDetail></ItemDetail>}></Route>
-        <Route path='/whychooseus' element={<WhyChooseUs></WhyChooseUs>}></Route>
+        <Route path='/fruits&vegetables/:itemId' element={<RequireAuth>
+          <ItemDetail></ItemDetail>
+        </RequireAuth>}
+        ></Route>
+        <Route path='/whychooseus' element={<RequireAuth>
+          <WhyChooseUs></WhyChooseUs>
+        </RequireAuth>
+        }></Route>
         <Route path='/testimonials' element={<Testimonials></Testimonials>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
-        <Route path='/additem' element={<AddItem></AddItem>}></Route>
+        <Route path='/manageinventories' element={<RequireAuth>
+       <ManageInventories></ManageInventories> </RequireAuth>}></Route>
+        <Route path='/additem' element={<RequireAuth>
+          <AddItem></AddItem>
+        </RequireAuth>}
+        ></Route> 
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
