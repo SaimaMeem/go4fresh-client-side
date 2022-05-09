@@ -25,11 +25,20 @@ const Header = () => {
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                 </li>
+                               
                                 <li className="nav-item p-2 relative w-max two hover:font-bold  active:bg-off-white-darker px-3 py-2 rounded-md">
                                     <Link
                                         className="nav-link text-dark-blue"
                                         to='/home#fruits&vegetables'
                                     >Fruits & Vegetables</Link>
+                                    <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
+                                    <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
+                                </li>
+                                <li className="nav-item p-2 relative w-max two hover:font-bold  active:bg-off-white-darker px-3 py-2 rounded-md">
+                                    <Link
+                                        className="nav-link text-dark-blue"
+                                        to='/manageinventories'
+                                    >Manage Inventories</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                 </li>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PageTitle from '../shared/PageTitle/PageTitle';
 
 const ItemDetail = () => {
     const { itemId } = useParams();
@@ -51,7 +52,7 @@ const ItemDetail = () => {
         console.log(newQuantity);
         const newItem = { ...itemDetail, quantity: newQuantity.toString() }
         setItemDetail(newItem);
-        
+
         toast.success(`${added} ${name} is added to the stock!`, {
             position: "top-right",
             autoClose: 5000,
@@ -79,6 +80,7 @@ const ItemDetail = () => {
     }
     return (
         <section className='py-36 text-black'>
+            <PageTitle title={`${name} Details`}></PageTitle>
             <div className="flex justify-center">
                 <div className="flex flex-col md:flex-row bg-white md:mx-16">
                     <img className="w-auto h-auto sm:h-72 sm:self-center md:w-72 lg:w-auto object-cover rounded-lg md:rounded-none md:rounded-l-lg md:shadow-lg mx-auto" src={image} alt="" />
@@ -119,8 +121,8 @@ const ItemDetail = () => {
                 </div>
             </div>
             <div className='my-10'>
-                <button type="button" data-mdb-ripple="true"
-                    data-mdb-ripple-color="light" className=" inline-block px-10 py-4 bg-lavender-dark text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-lavender-darker hover:shadow-lg focus:bg-lavender-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lavender-darkest active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</button>
+                <Link to='/manageinventories' type="button" data-mdb-ripple="true"
+                    data-mdb-ripple-color="light" className=" inline-block px-10 py-4 bg-lavender-dark text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-lavender-darker hover:shadow-lg focus:bg-lavender-darker focus:shadow-lg focus:outline-none focus:ring-0 active:bg-lavender-darkest active:shadow-lg transition duration-150 ease-in-out">Manage Inventories</Link>
             </div>
         </section>
     );

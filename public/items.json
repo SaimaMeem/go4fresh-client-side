@@ -45,13 +45,31 @@
       "supplier_name": "Barbra Parks"
     },
     {
-        "_id": "62764b2a131f42560177ccbf",
+        "_id": "62764b2a131f49870177ccbf",
         "name": "Blood Orange",
         "image": "https://i.ibb.co/pyqQ4Wt/orange.jpg",
         "price": "$4.55",
         "quantity": "1500",
-        "description": "Blood Orange, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals. It is loaded with vitamin C and vitamin B complex.",
+        "description": "Blood Orange, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals. It is loaded with vitamin C and B complex.",
         "supplier_name": "Barbra Parks"
+      },
+      {
+        "_id": "62764b2a131f42560177ccbf",
+        "name": "Pineapple",
+        "image": "https://i.ibb.co/GTrCB6D/pineapple.jpg",
+        "price": "$8.00",
+        "quantity": "3500",
+        "description": "Pineapple is an incredibly delicious, healthy tropical fruit. It’s packed with nutrients, antioxidants, and other helpful compounds that can protect against inflammation and disease. It’s commonly eaten baked, grilled, or freshly cut.",
+        "supplier_name": "John Parkinson"
+      },
+    {
+        "_id": "62764b2a131f42560187dccbf",
+        "name": "Eggplant",
+        "image": "https://i.ibb.co/8YVc06n/eggplant.jpg",
+        "price": "$1.55",
+        "quantity": "5500",
+        "description": "The eggplant, or aubergine, provides fiber and a range of nutrients. This low calorie vegetable features in the Mediterranean diet.A serving of eggplant can provide at least 5% of a person’s daily requirement of fiber, copper, manganese.",
+        "supplier_name": "Rachel Green"
       }
   ]
 
