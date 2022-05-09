@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
-    const { name, price, quantity, image, description, supplier_name } = item;
+    const {_id, name, price, quantity, image, description, supplier_name } = item;
+    const navigate = useNavigate();
+    const navigateToUpdateStock = (id) => {
+        navigate(`/fruits&vegetables/${id}`)
+    }
     return (
         <div>
             <div className="flex justify-center py-4">
@@ -20,13 +25,13 @@ const Item = ({ item }) => {
                         <p className="text-black text-base mb-4 text-left font-medium h-40 lg:h-48 xl:h-40">
                             {description}
                         </p>
-                        <button type="button" data-mdb-ripple="true"
+                        <button onClick={() => { navigateToUpdateStock(_id) }} type="button" data-mdb-ripple="true"
                             data-mdb-ripple-color="light" className=" inline-block px-6 py-2.5 bg-pastel-green text-white font-bold text-sm leading-tight uppercase rounded shadow-md hover:bg-pastel-green-dark hover:shadow-lg focus:bg-pastel-green-dark focus:shadow-lg focus:outline-none focus:ring-0 active:bg-pastel-green-darker  active:shadow-lg transition duration-150 ease-in-out">Update Stock</button>
 
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 };
