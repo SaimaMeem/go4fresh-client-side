@@ -25,19 +25,15 @@ const Register = () => {
         const password = passwordRef.current.value;
         console.log(email, password,username);
         await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: username })
+        await updateProfile({ displayName: username });
         await sendEmailVerification();
         console.log('Updated profile');
-        if(user){
-            // navigate(from, { replace: true });
-            
-            navigate('/home');
-        }
+        navigate('/home');
     };
     if (error) {
         divElement = <p className='text-redd font-semibold'>Error: {error?.message}</p>;
     }
-    if (loading) {
+    if (loading || updating) {
         divElement = <div className=" spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
         " role="status">
         </div>

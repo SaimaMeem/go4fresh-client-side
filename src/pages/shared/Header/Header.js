@@ -112,9 +112,9 @@ const Header = () => {
                                         role="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                        <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>&nbsp; &nbsp;
+                                        <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>
                                         {user?.photoURL && <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" /> 
-                                        }
+                                        }&nbsp; &nbsp;
                                         <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
                                     </Link>
                                     <ul
