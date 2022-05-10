@@ -4,7 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link';
 import brandLogo from '../../../images/brand-logo.png';
 import '../Header/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faCaretDown, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faCaretDown, faSignInAlt, faSignOutAlt, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
@@ -113,7 +113,8 @@ const Header = () => {
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false">
                                         <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>
-                                        {user?.photoURL && <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" /> 
+                                        {user?.photoURL ? <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
+                                        : <FontAwesomeIcon icon={faUserCircle} className='h-5 w-5'></FontAwesomeIcon> 
                                         }&nbsp; &nbsp;
                                         <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
                                     </Link>

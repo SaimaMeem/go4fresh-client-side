@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 const Login = () => {
     const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-    
+
     const navigate = useNavigate();
     const location = useLocation();
     let from = location?.state?.from?.pathname || "/";
@@ -21,10 +21,10 @@ const Login = () => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
- 
-        console.log(email,password);
+
+        console.log(email, password);
         if (email && password) {
-            console.log(email,password);
+            console.log(email, password);
             await signInWithEmailAndPassword(email, password);
         }
     };
@@ -89,18 +89,18 @@ const Login = () => {
                                 <input type="password" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name" placeholder="password" required ref={passwordRef} />
                                 <label htmlFor="password" className="text-gray-700">Password</label>
                             </div>
-                     
+
                         </div>
-                            <div className='mb-3'>
-                                {divElement}
-                            </div>
+                        <div className='mb-3'>
+                            {divElement}
+                        </div>
 
                         <button type="submit" data-mdb-ripple="true"
                             data-mdb-ripple-color="light" className="w-1/2 px-4 py-3 bg-blue-600 text-white font-semibold text-base leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Sign in</button>
                         <div className="flex justify-center items-center m-6">
 
                             <p to="" className="pt-3 text-md text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out font-bold">Forgot Password?
-                            <button className='text-orange-dark uppercase font-bold' onClick={resetPassword} type='button'>&nbsp;Reset Password</button></p>
+                                <button className='text-orange-dark uppercase font-bold' onClick={resetPassword} type='button'>&nbsp;Reset Password</button></p>
                         </div>
                         <p className="text-black mt-6 text-md text-center font-bold">New to Go4Fresh? <Link to="/register"
                             className="text-orange-dark font-bold hover:text-orange-darker  focus:text-orange-darker  transition duration-200 ease-in-out uppercase">Register</Link>
