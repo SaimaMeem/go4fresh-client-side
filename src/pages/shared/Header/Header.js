@@ -112,6 +112,7 @@ const Header = () => {
                                         role="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false">
+                                   
                                         <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>
                                         {user?.photoURL ? <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
                                         : <FontAwesomeIcon icon={faUserCircle} className='h-5 w-5'></FontAwesomeIcon> 
@@ -119,13 +120,13 @@ const Header = () => {
                                         <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
                                     </Link>
                                     <ul
-                                        className="dropdown-menu min-w-max absolute hidden bg-off-white text-base z-110 float-left py-2 list-none text-left rounded-lg shadow-xl mt-1 m-0 bg-clip-padding border-none left-auto right-0 w-full"
+                                        className="dropdown-menu min-w-max absolute hidden bg-off-white text-base z-110 float-left py-2 px-4 list-none text-left rounded-lg shadow-xl mt-1 m-0 bg-clip-padding border-none left-auto right-0 w-full"
                                         aria-labelledby="dropdownMenuButton2"
                                     >
                                         <li>
                                             <Link
                                                 className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
-                                                to='/'>My Items</Link>
+                                                to='/myitems'>My Items</Link>
                                         </li>
                                         <li>
                                             <Link
@@ -137,7 +138,7 @@ const Header = () => {
                                                 className="dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"
                                                 to='/additem'>Add New Item</Link>
                                         </li>
-                                        <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25" />
+                                        <hr className="h-0 my-2 border border-solid border-t-0 border-gray-700 opacity-25 w-full px-0" />
                                         <li>
                                             <button to='' onClick={logOut}
                                                 className="text-left dropdown-item text-sm py-2 px-4 font-semibold block w-full whitespace-nowrap bg-transparent hover:font-bold  active:bg-off-white-darker rounded-md"> SignOut &nbsp;
@@ -146,7 +147,6 @@ const Header = () => {
                                     </ul>
                                 </div>
                                     :
-
                                     <Link
                                         to='/login'
                                         className="flex items-center hidden-arrow  rounded-full focus:outline-none hover:font-bold">
@@ -154,10 +154,7 @@ const Header = () => {
                                         <FontAwesomeIcon icon={faSignInAlt}></FontAwesomeIcon>
                                     </Link>
                             }
-
-
                         </div>
-
                     </div>
                     {/* <!-- Right elements --> */}
 

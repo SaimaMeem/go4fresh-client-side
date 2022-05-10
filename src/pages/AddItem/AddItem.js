@@ -1,10 +1,13 @@
 import { faFloppyDisk } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
     const handleAddItem = event => {
         event.preventDefault();
         const name = event.target.name.value;
@@ -13,13 +16,15 @@ const AddItem = () => {
         const price = event.target.price.value;
         const photoUrl = event.target.url.value;
         const description = event.target.description.value;
+        const email = user.email;
         const item = {
             name: name,
             supplier_name: supplierName,
             quantity: quantity,
             price: price,
             image: photoUrl,
-            description: description
+            description: description,
+            email:email
         }
         fetch('http://localhost:5000/items', {
             method: 'POST',
