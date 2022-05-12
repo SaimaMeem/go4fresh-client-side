@@ -89,7 +89,7 @@ const ItemDetail = () => {
                     <img className="w-auto h-auto sm:h-72 sm:self-center md:w-72 lg:w-auto object-cover rounded-lg md:rounded-none md:rounded-l-lg md:shadow-lg mx-auto" src={image} alt="" />
                     <div className="p-6 flex flex-col justify-start text-left">
                         <h5 className="text-3xl font-bold mb-2">{name}</h5>
-                        <h5 className="text-2xl font-bold mb-2">Price:  <span className='text-xl font-semibold'>{price}</span> <span className='text-xs font-medium text-gray-800'>&nbsp; per piece</span></h5>
+                        <h5 className="text-2xl font-bold mb-2">Price:  <span className='text-xl font-semibold'>${price}</span> <span className='text-xs font-medium text-gray-800'>&nbsp; per piece</span></h5>
                         <h5 className="text-lg font-bold mb-2">Supplier:  <span className='text-base font-medium'>{supplier_name}</span></h5>
                         <p className="text-base font-medium mb-4">
                             {description}

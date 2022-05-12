@@ -94,7 +94,7 @@ const ManageInventories = () => {
                                                         <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
                                                     </td>
                                                     <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        {item.price}
+                                                        ${item.price}
                                                     </td>
                                                     <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
                                                         {item.quantity}

@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Item = ({ item }) => {
-    const {_id, name, price, quantity, image, description, supplier_name } = item;
+    const { _id, name, price, quantity, image, description, supplier_name } = item;
     const navigate = useNavigate();
     const navigateToUpdateStock = (id) => {
         navigate(`/fruits&vegetables/${id}`)
@@ -17,7 +17,7 @@ const Item = ({ item }) => {
                         <img className="rounded-lg h-40 w-40 object-cover hover:scale-110 transition duration-300 ease-in-out" src={image} alt="" />
                         <div className='text-left pl-3 lg:h-52 xl:h-auto'>
                             <h5 className="text-black text-xl font-bold mb-1 text-center">{name}</h5>
-                            <h5 className="text-black text-lg font-bold mb-2">Price: <span className='text-base'>{price}</span> <span className='text-xs font-semibold text-gray-800'>&nbsp; per piece</span></h5>
+                            <h5 className="text-black text-lg font-bold mb-2">Price: <span className='text-base'>${price}</span> <span className='text-xs font-semibold text-gray-800'>&nbsp; per piece</span></h5>
                             <h5 className="text-black text-base font-bold mb-2">Quantity: <span className='text-base font-medium'> {quantity}</span></h5>
 
                             <h5 className="text-black text-base font-bold mb-2"> Supplier:<span className='text-sm font-semibold'> {supplier_name}</span></h5>
