@@ -24,7 +24,7 @@ const WhyChooseUs = () => {
                 <div className='flex items-center justify-center py-5 md:py-20'>
                     <img src={roundLogo} className="h-72 w-72 rounded-full border-4 border-white p-5 hover:shadow-lg transition duration-300 ease-in-out" alt="" />
                 </div>
-                <div className='py-5 md:py-20'>
+                <div className='py-5 md:py-20 px-10'>
                     <p className="flex items-center justify-center mb-4 text-xl font-bold">
                         <FontAwesomeIcon icon={faBoxesStacked} className="shadow-lg border-2 rounded-full p-2 border-dark-blue hover:scale-105 transition duration-150 ease-in-out"></FontAwesomeIcon>
                         &nbsp; &nbsp;Untouched Hygine Packed

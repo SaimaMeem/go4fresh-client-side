@@ -1,6 +1,6 @@
 ## Go4Fresh
 
-[Go4Fresh](https://picturesque-stories.web.app/)
+[Go4Fresh](https://go4fresh-7ca7a.web.app/)
 
 ## Description
 * This is a warehouse management system for fresh fruits and vegetables.

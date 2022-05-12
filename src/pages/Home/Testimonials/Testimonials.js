@@ -8,7 +8,7 @@ const Testimonials = () => {
         <section className='text-dark-blue my-14' id='testimonials'>
             <h3 className="leading-tight text-3xl font-bold my-10 text-dark-blue">Testimonials</h3>
 
-            <div className="mb-20 text-dark-blue px-20">
+            <div className="mb-20 text-dark-blue px-10 md:px-20">
                 <div className="text-center md:max-w-xl lg:max-w-3xl mx-auto">
                 </div>
 

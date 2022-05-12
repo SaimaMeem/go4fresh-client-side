@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         <div>
             <div className="flex justify-center py-4">
                 <div className="rounded-lg shadow-lg bg-white max-w-sm">
-                    <div className='grid grid-cols-2 px-5 pt-5'>
+                    <div className='grid grid-cols-2 px-3 pt-5'>
                         <img className="rounded-lg h-40 w-40 object-cover hover:scale-110 transition duration-300 ease-in-out" src={image} alt="" />
                         <div className='text-left pl-3 lg:h-52 xl:h-auto'>
                             <h5 className="text-black text-xl font-bold mb-1 text-center">{name}</h5>
