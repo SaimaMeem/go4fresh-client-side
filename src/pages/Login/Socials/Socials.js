@@ -4,12 +4,14 @@ import React from 'react';
 import { useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 import google from '../../../images/google-logo.png';
 const Socials = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
     const location = useLocation();
     const navigate = useNavigate();
+    const [token] = useToken(googleUser || facebookUser);
     let divElement;
     let from = location?.state?.from?.pathname || "/";
     if (googleError || facebookError) {
@@ -21,8 +23,8 @@ const Socials = () => {
             <span className="visually-hidden">Loading...</span>
         </div>
     }
-    if (googleUser || facebookUser) {
-        navigate('/home');
+    if (token) {
+        // navigate('/home');
         navigate(from, { replace: true });
         console.log(googleUser || facebookUser);
     }

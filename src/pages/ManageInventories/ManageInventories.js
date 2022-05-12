@@ -82,7 +82,8 @@ const ManageInventories = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {
+                                {items.length !== 0 ?
+                                    
                                             items.map(item =>
                                                 <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
@@ -99,12 +100,14 @@ const ManageInventories = () => {
                                                         {item.supplier_name}
                                                     </td>
                                                     <td className="text-lg font-medium px-6 py-4 whitespace-nowrap border-r text-redd">
-                                                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id,item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
+                                                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id, item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
                                                     </td>
 
                                                 </tr>
-                                            )
-                                        }
+                                            ):<tr>
+                                                <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
+                                            </tr>
+                                        }  
                                     </tbody>
                                 </table>
                             </div>

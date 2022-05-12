@@ -12,21 +12,21 @@ import auth from '../../../firebase.init';
 const Header = () => {
     const navigate = useNavigate();
     const [user,loading] = useAuthState(auth);
-    console.log(user?.displayName);
+    // console.log(user?.displayName);
     const logOut = () => {
         signOut(auth);
         navigate('/login');
     };
     if(loading){
-        console.log("loading");
-//         <section className="pt-36 pb-28">
-//         <div className="text-center">
-//             <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
-// " role="status">
-//                 <span className="visually-hidden">Loading...</span>
-//             </div>
-//         </div>
-//     </section>
+        // console.log("loading");
+        <section className="pt-36 pb-28">
+        <div className="text-center">
+            <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
+" role="status">
+                <span className="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </section>
     }
     return (
         <div className='relative'>
@@ -87,7 +87,7 @@ const Header = () => {
                                 <li className="nav-item p-2 relative w-max two hover:font-bold  active:bg-off-white-darker px-3 py-2 rounded-md">
                                     <Link
                                         className="nav-link text-dark-blue"
-                                        to='/'
+                                        to='/aboutus'
                                     >About Us</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
                                     <span className="absolute bottom-0.5 right-1/2 w-0 transition-all h-1 bg-lavender"></span>

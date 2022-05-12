@@ -11,7 +11,7 @@ const Home = () => {
     const [user,loading] = useAuthState(auth);
     console.log(user?.displayName);
     if(loading){
-        console.log("loading");
+        // console.log("loading");
         <section className="pt-36 pb-28">
         <div className="text-center">
             <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold

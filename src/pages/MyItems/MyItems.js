@@ -6,28 +6,38 @@ import { toast } from 'react-toastify';
 import PageTitle from '../shared/PageTitle/PageTitle';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+// import { useNavigate } from 'react-router-dom';
 
 const MyItems = () => {
     const [items, setItems] = useState([]);
     const [user] = useAuthState(auth);
-    const email = user.email;
+    const email = user?.email;
+    // const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5000/myitems?email=${email}`)
+        fetch(`http://localhost:5000/myitems?email=${email}`, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+        })
             .then(res => res.json())
             .then(data => setItems(data))
-
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }, [email]);
     let count = 1;
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);
-    const displayModal = (id,name) => {
+    const displayModal = (id, name) => {
         setId(id);
         setName(name);
 
     }
-    const submitDelete = (id,name) => {
+    const submitDelete = (id, name) => {
         // console.log("clicked", id);
-        
+
         toast.success(`${name} is deleted from the stock!`, {
             position: "top-right",
             autoClose: 5000,
@@ -39,7 +49,11 @@ const MyItems = () => {
         });
         const url = `http://localhost:5000/items/${id}`;
         fetch(url, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
         })
             .then(res => res.json())
             .then(data => {
@@ -49,7 +63,7 @@ const MyItems = () => {
                     setItems(rest);
                 }
             })
-      };
+    };
     return (
         <section>
             <PageTitle title={'My Items'}></PageTitle>
@@ -85,7 +99,8 @@ const MyItems = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {
+                                        {items.length ?
+
                                             items.map(item =>
                                                 <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
@@ -106,7 +121,9 @@ const MyItems = () => {
                                                     </td>
 
                                                 </tr>
-                                            )
+                                            ) : <tr>
+                                                <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
+                                            </tr>
                                         }
                                     </tbody>
                                 </table>
@@ -115,7 +132,7 @@ const MyItems = () => {
                     </div>
                 </div>
             </div>
-            <Modal id={id} name={name}  confirmModal={submitDelete}  />
+            <Modal id={id} name={name} confirmModal={submitDelete} />
         </section>
     );
 };

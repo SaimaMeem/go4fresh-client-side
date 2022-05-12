@@ -7,10 +7,11 @@ import auth from '../../../firebase.init';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImage from '../../../images/login.png';
 import { toast } from 'react-toastify';
+import useToken from '../../../hooks/useToken';
 const Login = () => {
     const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
-
+    const [token] = useToken(emailUser);
     const navigate = useNavigate();
     const location = useLocation();
     let from = location?.state?.from?.pathname || "/";
@@ -29,9 +30,7 @@ const Login = () => {
         }
     };
     let divElement;
-    if (emailUser) {
-        console.log(emailUser);
-        // navigate('/home');
+    if (token) {
         navigate(from, { replace: true });
     }
     if (emailError) {
@@ -73,8 +72,8 @@ const Login = () => {
         <section className='pt-36 pb-28 font-medium'>
             <PageTitle title={'Login'}></PageTitle>
             <h3 className="leading-tight text-3xl font-bold text-dark-blue pb-5"> Login</h3>
-            <div className='grid grid-cols-1 lg:grid-cols-2  justify-center w-auto rounded-lg shadow-lg md:mx-20 items-center md:px-10'>
-                <div className='w-full'>
+            <div className='grid grid-cols-1 lg:grid-cols-2  justify-center w-auto rounded-lg shadow-lg md:mx-20 items-center md:px-20'>
+                <div className='w-10/12'>
                     <img className='w-4/5 mx-auto object-cover' src={loginImage} alt="" />
                 </div>
                 <div className="p-6  bg-white w-full">

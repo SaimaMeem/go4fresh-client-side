@@ -5,6 +5,7 @@ import Socials from '../Socials/Socials';
 import registerImage from '../../../images/register.jpg';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import useToken from '../../../hooks/useToken';
 const Register = () => {
     const navigate = useNavigate();
     // const location = useLocation();
@@ -17,19 +18,23 @@ const Register = () => {
     const usernameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
+    const [token] = useToken(user);
     const handleSubmit = async (event) => {
         event.preventDefault();
         const username = usernameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password,username);
+        console.log(email, password, username);
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: username });
         await sendEmailVerification();
         console.log('Updated profile');
         navigate('/home');
+
     };
+    // if (token) {
+    //     navigate('/home');
+    // }
     if (error) {
         divElement = <p className='text-redd font-semibold'>Error: {error?.message}</p>;
     }
@@ -49,21 +54,21 @@ const Register = () => {
                 <div className="p-6  bg-white w-full">
                     <form onSubmit={handleSubmit}>
                         <div className="form-floating m-3 w-auto">
-                            <input type="text" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="username" placeholder="username" ref={usernameRef} required/>
+                            <input type="text" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="username" placeholder="username" ref={usernameRef} required />
                             <label htmlFor="username" className="text-gray-700">User  Name</label>
                             {/* {errors.username && <p className='text-redd'>This field is required</p>} */}
                         </div>
-                        
+
                         <div className="form-floating m-3 w-auto">
-                            <input  type="email" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email" placeholder="email" ref={emailRef} required/>
+                            <input type="email" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="email" placeholder="email" ref={emailRef} required />
                             <label htmlFor="email" className="text-red">Email Address</label>
-                      
+
                         </div>
 
                         <div className="form-floating m-3 w-auto">
                             <input type="password" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name" placeholder="password" required ref={passwordRef} />
                             <label htmlFor="password" className="text-gray-700">Password</label>
-                  
+
                         </div>
 
                         <div className='mb-3'>
