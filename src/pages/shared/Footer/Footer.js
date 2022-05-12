@@ -48,6 +48,9 @@ const Footer = () => {
                             About Go4Fresh
                         </h6>
                         <p className="flex justify-center mb-4">
+                            <Link to="/aboutus" className="text-dark-blue">About Us</Link>
+                        </p>
+                        <p className="flex justify-center mb-4">
                             <Link to="/home#whychooseus" className="text-dark-blue">Why Choose Us</Link>
                         </p>
                         <p className="flex justify-center mb-4">

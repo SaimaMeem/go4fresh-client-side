@@ -5,7 +5,7 @@ const Blogs = () => {
     return (
         <section id='blogs' className=''>
             <PageTitle title={'Blogs'}></PageTitle>
-            <div className='py-36 md:px-20'>
+            <div className='pt-36 pb-28 md:px-20'>
                 <h3 className="leading-tight text-3xl font-bold text-dark-blue mb-5">  Blogs</h3>
                 <div class="accordion font-medium  shadow-lg rounded-lg text-left" id="accordionExample">
                     <div class="accordion-item bg-white border border-gray-200 py-3">
@@ -64,12 +64,10 @@ const Blogs = () => {
                         </h2>
                         <div id="collapseFour" class="accordion-collapse" aria-labelledby="headingFour">
                             <div class="accordion-body py-4 px-5">
-                                <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                                until the collapse plugin adds the appropriate classes that we use to style each
-                                element. These classes control the overall appearance, as well as the showing and
-                                hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                our default variables. It's also worth noting that just about any HTML can go within
-                                the <code>.accordion-body</code>, though the transition does limit overflow.
+                                <b>  JWT (JSON Web Token),</b> is an open standard used to share security information between two parties and they are a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued.
+                                <div className='py-1'></div>
+                                JWTs is different from other web tokens as they contain a set of claims. Claims are used to transmit information between two parties. These claims depend on the use cases at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted.
+
                             </div>
                         </div>
                     </div>
