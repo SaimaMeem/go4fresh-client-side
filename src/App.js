@@ -21,7 +21,7 @@ import Header from './pages/shared/Header/Header';
 function App() {
   return (
     // <div className="App relative ">
-    <div class="App min-h-screen flex flex-col">
+    <div className="App min-h-screen flex flex-col">
       <Header></Header>
       <div className='flex-1'>
         <Routes>

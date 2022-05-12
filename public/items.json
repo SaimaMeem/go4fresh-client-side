@@ -1,70 +1,98 @@
 [
-    {
+  {
     "name": "Tomato",
-      "image": "https://i.ibb.co/1ryMqKg/tomato.jpg",
-      "price": "$4.31",
-      "quantity": "2500",
-      "description": "The tomato is consumed in diverse ways, including raw, as an ingredient in many dishes. While it is botanically a fruit, it is considered a vegetable for culinary purposes. The fruit is rich in lycopene, which may have beneficial health effects.",
-      "supplier_name": "Bird Kelley"
-    },
-    {
+    "image": "https://i.ibb.co/1ryMqKg/tomato.jpg",
+    "price": "$4.31",
+    "quantity": "2500",
+    "description": "The tomato is consumed in diverse ways, including raw, as an ingredient in many dishes. While it is botanically a fruit, it is considered a vegetable for culinary purposes. The fruit is rich in lycopene, which may have beneficial health effects.",
+    "supplier_name": "Bird Kelley"
+  },
+  {
     "name": "Yellow Capsicum",
-      "image": "https://i.ibb.co/gWHf1BD/yellow-capsicum.jpg",
-      "price": "$5.59",
-      "quantity": "500",
-      "description": "Capsicum is known as a sweet peppers. Sweet peppers are fruit pods on the capsicum plant. Yellow capsicum contains an impressive list of plant nutrients that found to have disease preventing and health promoting properties.",
-      "supplier_name": "Lilia Calhoun"
-    },
-    {
-      
-"name": "Carrot",
-      "image": "https://i.ibb.co/0BSnX0X/carrot.jpg",
-      "price": "$3.73",
-      "quantity": "3000",
-      "description": "The carrot is a root vegetable, typically orange in color.The fiber in carrots can help keep blood sugar levels under control. And they're loaded with vitamin A and beta-carotene. Carrots have calcium and vitamin K, both of which are important for bone health.",
-      "supplier_name": "Mildred Summers"
-    },
-    {
-      
-"name": "Watermelon",
-      "image": "https://i.ibb.co/JB2MZh4/watermelon.jpg",
-      "price": "$15",
-      "quantity": "1000",
-      "description": "Watermelon is a sweet and refreshing low calorie summer snack. It provides hydration and also essential nutrients. This large round fruit has a green rind and bright red flesh. It’s also packed with nutrients, including antioxidants and vitamins A and C.",
-      "supplier_name": "Charity Strickland"
-    },
-    {
+    "image": "https://i.ibb.co/gWHf1BD/yellow-capsicum.jpg",
+    "price": "$5.59",
+    "quantity": "500",
+    "description": "Capsicum is known as a sweet peppers. Sweet peppers are fruit pods on the capsicum plant. Yellow capsicum contains an impressive list of plant nutrients that found to have disease preventing and health promoting properties.",
+    "supplier_name": "Lilia Calhoun"
+  },
+  {
+    "name": "Carrot",
+    "image": "https://i.ibb.co/0BSnX0X/carrot.jpg",
+    "price": "$3.73",
+    "quantity": "3000",
+    "description": "The carrot is a root vegetable, typically orange in color.The fiber in carrots can help keep blood sugar levels under control. And they're loaded with vitamin A and beta-carotene. Carrots have calcium and vitamin K, both of which are important for bone health.",
+    "supplier_name": "Mildred Summers"
+  },
+  {
+    "name": "Watermelon",
+    "image": "https://i.ibb.co/JB2MZh4/watermelon.jpg",
+    "price": "$15",
+    "quantity": "1000",
+    "description": "Watermelon is a sweet and refreshing low calorie summer snack. It provides hydration and also essential nutrients. This large round fruit has a green rind and bright red flesh. It’s also packed with nutrients, including antioxidants and vitamins A and C.",
+    "supplier_name": "Charity Strickland"
+  },
+  {
     "name": "Banana",
-      "image": "https://i.ibb.co/Sc7Y6WX/banana.jpg",
-      "price": "$2.05",
-      "quantity": "4000",
-      "description": "Bananas are one of the most popular fruits worldwide. They contain essential nutrients that can have a protective impact on health. Bananas are high in antioxidants, which we come into contact with every day, from the sunlight to the lotion you put on your skin.",
-      "supplier_name": "Barbra Parks"
-    },
-    {
-        "name": "Blood Orange",
-        "image": "https://i.ibb.co/pyqQ4Wt/orange.jpg",
-        "price": "$4.55",
-        "quantity": "1500",
-        "description": "Blood Orange, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals. It is loaded with vitamin C and B complex.",
-        "supplier_name": "Barbra Parks"
-      },
-      {
-        "name": "Pineapple",
-        "image": "https://i.ibb.co/GTrCB6D/pineapple.jpg",
-        "price": "$8.00",
-        "quantity": "3500",
-        "description": "Pineapple is an incredibly delicious, healthy tropical fruit. It’s packed with nutrients, antioxidants, and other helpful compounds that can protect against inflammation and disease. It’s commonly eaten baked, grilled, or freshly cut.",
-        "supplier_name": "John Parkinson"
-      },
-    {
-        "name": "Eggplant",
-        "image": "https://i.ibb.co/8YVc06n/eggplant.jpg",
-        "price": "$1.55",
-        "quantity": "5500",
-        "description": "The eggplant, or aubergine, provides fiber and a range of nutrients. This low calorie vegetable features in the Mediterranean diet.A serving of eggplant can provide at least 5% of a person’s daily requirement of fiber, copper, manganese.",
-        "supplier_name": "Rachel Green"
-      }
-  ]
-
-
+    "image": "https://i.ibb.co/Sc7Y6WX/banana.jpg",
+    "price": "$2.05",
+    "quantity": "4000",
+    "description": "Bananas are one of the most popular fruits worldwide. They contain essential nutrients that can have a protective impact on health. Bananas are high in antioxidants, which we come into contact with every day, from the sunlight to the lotion you put on your skin.",
+    "supplier_name": "Barbra Parks"
+  },
+  {
+    "name": "Blood Orange",
+    "image": "https://i.ibb.co/pyqQ4Wt/orange.jpg",
+    "price": "$4.55",
+    "quantity": "1500",
+    "description": "Blood Orange, a variety of orange, is a popular citrus fruit cultivated in hot climate. The fruit is rich in mineral salts and other ingredients of nutritive value such as iron, lime, phosphorus, and vital minerals. It is loaded with vitamin C and B complex.",
+    "supplier_name": "Barbra Parks"
+  },
+  {
+    "name": "Pineapple",
+    "image": "https://i.ibb.co/GTrCB6D/pineapple.jpg",
+    "price": "$8.00",
+    "quantity": "3500",
+    "description": "Pineapple is an incredibly delicious, healthy tropical fruit. It’s packed with nutrients, antioxidants, and other helpful compounds that can protect against inflammation and disease. It’s commonly eaten baked, grilled, or freshly cut.",
+    "supplier_name": "John Parkinson"
+  },
+  {
+    "name": "Mango",
+    "image": "https://i.ibb.co/GW19yyP/mango.webp",
+    "price": "$3.00",
+    "quantity": "1500",
+    "description": "Mangoes are tropical stone fruits about the size of a grapefruit. The skin ranges in colour from yellow to green or red to green. The fruit has an inedible, hard stone in the middle. Mangoes are native to Southern Asia.",
+    "supplier_name": "Maria Jonas"
+  },
+  {
+    "name": "Coconut",
+    "image": "https://i.ibb.co/xYrpWZp/coconut.jpg",
+    "price": "$5.50",
+    "quantity": "500",
+    "description": "Coconuts grow on palm trees with the scientific name Cocos Nucifera.Coconut meat is the edible white flesh lining the inside of a coconut, also called the 'Kernel'. Coconut meat can be used to create coconut oil, coconut cream, coconut milk, and dried coconut.",
+    "supplier_name": "David Walkman"
+  },
+  {
+    "name": "Potato",
+    "image": "https://i.ibb.co/9hDgSFm/potato.jpg",
+    "price": "$0.90",
+    "quantity": "3500",
+    "description": "Potatoes are a versatile root vegetable and a staple food in many households.THey are a good source of fiber, which is helful for weight loss by keeping people full longer. Fiber can help prevent heart disease by keeping cholesterol and blood sugar levels in check.",
+    "supplier_name": "Penny Cooper"
+  },
+  {
+    "name": "Green Chili",
+    "image": "https://i.ibb.co/BGCCh2q/green-chili.webp",
+    "price": "$0.20",
+    "quantity": "7500",
+    "description": "Chilies, with their internal, edible seeds, are most definitely a fruit. They are rich in vitamins A, B6, and C, calcium, zinc, and so on. The anti-inflammatory properties of green chillies can also help to deal with arthritis or osteoporosis better.",
+    "supplier_name": "Sheldon Stark"
+  },
+  {
+    "name": "Eggplant",
+    "image": "https://i.ibb.co/8YVc06n/eggplant.jpg",
+    "price": "$1.55",
+    "quantity": "5500",
+    "description": "The eggplant, or aubergine, provides fiber and a range of nutrients. This low calorie vegetable features in the Mediterranean diet.A serving of eggplant can provide at least 5% of a person’s daily requirement of fiber, copper, manganese.",
+    "supplier_name": "Rachel Green"
+  }
+]

@@ -6,13 +6,16 @@ import { toast } from 'react-toastify';
 import PageTitle from '../shared/PageTitle/PageTitle';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const MyItems = () => {
     const [items, setItems] = useState([]);
     const [user] = useAuthState(auth);
     const email = user?.email;
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
+    const navigateToUpdateStock = (id) => {
+        navigate(`/fruits&vegetables/${id}`)
+    }
     useEffect(() => {
         fetch(`https://calm-reef-60814.herokuapp.com/myitems?email=${email}`, {
             method: "GET",
@@ -104,7 +107,7 @@ const MyItems = () => {
                                             items.map(item =>
                                                 <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
-                                                    <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2">
+                                                    <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2 cursor-pointer" type='button' onClick={() => { navigateToUpdateStock(item._id) }}>
                                                         <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
                                                     </td>
                                                     <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">

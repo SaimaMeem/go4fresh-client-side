@@ -9,7 +9,7 @@ import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
 
 const Home = () => {
     const [user,loading] = useAuthState(auth);
-    console.log(user?.displayName);
+    // console.log(user?.displayName);
     if(loading){
         // console.log("loading");
         <section className="pt-36 pb-28">

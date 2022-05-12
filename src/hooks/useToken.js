@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 
 
 const useToken = (user) => {
     // const navigate = useNavigate();
-    const location = useLocation();
+    // const location = useLocation();
     // let from = location?.state?.from?.pathname || "/";
     const [token, setToken] = useState('');
     const email = user?.user?.email;
-    console.log(email);
+    // console.log(email);
     useEffect(() => {
         if (email) {
             fetch('https://calm-reef-60814.herokuapp.com/login', {
