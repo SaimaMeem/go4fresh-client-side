@@ -14,7 +14,7 @@ const MyItems = () => {
     const email = user?.email;
     // const navigate = useNavigate();
     useEffect(() => {
-        fetch(`http://localhost:5000/myitems?email=${email}`, {
+        fetch(`https://calm-reef-60814.herokuapp.com/myitems?email=${email}`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ const MyItems = () => {
             draggable: true,
             progress: undefined,
         });
-        const url = `http://localhost:5000/items/${id}`;
+        const url = `https://calm-reef-60814.herokuapp.com/items/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {

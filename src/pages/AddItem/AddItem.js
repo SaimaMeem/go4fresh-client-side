@@ -24,9 +24,9 @@ const AddItem = () => {
             price: price,
             image: photoUrl,
             description: description,
-            email:email
+            email: email
         }
-        fetch('http://localhost:5000/items', {
+        fetch('https://calm-reef-60814.herokuapp.com/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -1,4 +1,4 @@
-import {  } from '@fortawesome/free-regular-svg-icons';
+import { } from '@fortawesome/free-regular-svg-icons';
 import { faArrowRight, faListCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ const ItemDetail = () => {
     const { itemId } = useParams();
     const [itemDetail, setItemDetail] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/items/${itemId}`)
+        fetch(`https://calm-reef-60814.herokuapp.com/items/${itemId}`)
             .then(res => res.json())
             .then(data => setItemDetail(data));
     }, [itemId]);
@@ -32,7 +32,7 @@ const ItemDetail = () => {
             draggable: true,
             progress: undefined,
         });
-        fetch(`http://localhost:5000/items/${id}`, {
+        fetch(`https://calm-reef-60814.herokuapp.com/items/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const ItemDetail = () => {
             progress: undefined,
         });
         // console.log(typeof quantity);
-        fetch(`http://localhost:5000/items/${id}`, {
+        fetch(`https://calm-reef-60814.herokuapp.com/items/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

@@ -6,30 +6,30 @@ const useToken = (user) => {
     // const navigate = useNavigate();
     const location = useLocation();
     // let from = location?.state?.from?.pathname || "/";
-    const [token,setToken] = useState('');
+    const [token, setToken] = useState('');
     const email = user?.user?.email;
     console.log(email);
-    useEffect(()=>{
-     if(email){
-        fetch('http://localhost:5000/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({email}),
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                setToken(data.accessToken);
-                localStorage.setItem('accessToken',data.accessToken);
-             
-            });
-     }
+    useEffect(() => {
+        if (email) {
+            fetch('https://calm-reef-60814.herokuapp.com/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    setToken(data.accessToken);
+                    localStorage.setItem('accessToken', data.accessToken);
+
+                });
+        }
     }
-    ,[user,email]);
+        , [user, email]);
     return (
-        [token,setToken]
+        [token, setToken]
     );
 };
 

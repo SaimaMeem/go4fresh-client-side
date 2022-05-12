@@ -8,18 +8,18 @@ import Modal from '../Modal/Modal';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 const ManageInventories = () => {
-    const [items,setItems] = useItems();
+    const [items, setItems] = useItems();
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);
 
-    const displayModal = (id,name) => {
+    const displayModal = (id, name) => {
         setId(id);
         setName(name);
 
     }
-    const submitDelete = (id,name) => {
+    const submitDelete = (id, name) => {
         // console.log("clicked", id);
-        
+
         toast.success(`${name} is deleted from the stock!`, {
             position: "top-right",
             autoClose: 5000,
@@ -29,7 +29,7 @@ const ManageInventories = () => {
             draggable: true,
             progress: undefined,
         });
-        const url = `http://localhost:5000/items/${id}`;
+        const url = `https://calm-reef-60814.herokuapp.com/items/${id}`;
         fetch(url, {
             method: "DELETE"
         })
@@ -41,7 +41,7 @@ const ManageInventories = () => {
                     setItems(rest);
                 }
             })
-      };
+    };
 
     let count = 1;
     return (
@@ -82,8 +82,8 @@ const ManageInventories = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                {items.length !== 0 ?
-                                    
+                                        {items.length !== 0 ?
+
                                             items.map(item =>
                                                 <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
                                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
@@ -104,10 +104,10 @@ const ManageInventories = () => {
                                                     </td>
 
                                                 </tr>
-                                            ):<tr>
+                                            ) : <tr>
                                                 <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
                                             </tr>
-                                        }  
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -115,7 +115,7 @@ const ManageInventories = () => {
                     </div>
                 </div>
             </div>
-            <Modal id={id} name={name}  confirmModal={submitDelete}  />
+            <Modal id={id} name={name} confirmModal={submitDelete} />
         </section>
     );
 };
