@@ -67,7 +67,7 @@ const Banner = () => {
                         />
                         <div className="w-1/2 carousel-caption  md:block absolute flex flex-col justify-start items-center top-28 md:top-60 lg:top-56 -left-0 pl-4 lg:pl-10">
                             <h5 className="lg:font-headings lg:text-5xl  text-md md:text-3xl font-semibold">The Freshest of Vegetables</h5>
-                            <p className='pt-2 text-sm lg:text-2xl md:text-lg font-medium'>Our promise is to bring our customers the freshest and  healthiestproduce available.</p>
+                            <p className='pt-2 text-sm lg:text-2xl md:text-lg font-medium'>Our promise is to bring our customers the freshest and  healthiest produce available.</p>
                         </div>
                     </div>
                 </div>
