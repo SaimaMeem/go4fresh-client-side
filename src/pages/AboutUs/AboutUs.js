@@ -10,7 +10,7 @@ const AboutUs = () => {
                 <div className='w-full'>
                     <img className='w-4/5 mx-auto object-cover' src={aboutUsImage} alt="" />
                 </div>
-                <div className="p-6  bg-white w-full text-left">
+                <div className="bg-white w-full text-left">
                     <p>Go4Fresh was founded in 2017 to integrate farm-to-fork and deliver customers safe & healthy produce at right price.
                         We connect fresh produce farmers to businesses through a collaborative approach.
                         <br></br>

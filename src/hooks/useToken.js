@@ -27,7 +27,7 @@ const useToken = (user) => {
                 });
         }
     }
-        , [user, email]);
+        , [user, token,email]);
     return (
         [token, setToken]
     );

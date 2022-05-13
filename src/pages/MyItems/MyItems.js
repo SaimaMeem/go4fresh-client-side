@@ -29,7 +29,7 @@ const MyItems = () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
-    }, [email]);
+    }, [items,email]);
     let count = 1;
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);

@@ -13,7 +13,7 @@ const ItemDetail = () => {
         fetch(`https://calm-reef-60814.herokuapp.com/items/${itemId}`)
             .then(res => res.json())
             .then(data => setItemDetail(data));
-    }, [itemId]);
+    }, [itemDetail,itemId]);
     const { _id, name, price, image, description, supplier_name } = itemDetail;
     let { quantity } = itemDetail;
 
