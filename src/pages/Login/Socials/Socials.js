@@ -22,7 +22,6 @@ const Socials = () => {
         divElement = <Loader/>
     }
     if (token) {
-        // navigate('/home');
         navigate(from, { replace: true });
         // console.log(googleUser || facebookUser);
     }

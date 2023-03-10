@@ -29,17 +29,15 @@ const Register = () => {
         await updateProfile({ displayName: username });
         await sendEmailVerification();
         // console.log('Updated profile');
-        navigate('/home');
-
     };
-    // if (token) {
-    //     navigate('/home');
-    // }
+    if (token) {
+        navigate('/home');
+    }
     if (error) {
         divElement = <p className='text-redd font-semibold'>Error: {error?.message}</p>;
     }
     if (loading || updating) {
-        divElement = <Loader/>
+        divElement = <Loader />
     }
     return (
         <section className='pt-36 pb-28 font-medium'>
