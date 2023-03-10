@@ -8,7 +8,6 @@ const useToken = (user) => {
     // let from = location?.state?.from?.pathname || "/";
     const [token, setToken] = useState('');
     const email = user?.user?.email;
-    // console.log(email);
     useEffect(() => {
         if (email) {
             fetch('https://go4fresh.onrender.com/login', {
@@ -20,7 +19,6 @@ const useToken = (user) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     setToken(data.accessToken);
                     localStorage.setItem('accessToken', data.accessToken);
 

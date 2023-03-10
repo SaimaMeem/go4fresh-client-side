@@ -24,11 +24,10 @@ const Register = () => {
         const username = usernameRef.current.value;
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        console.log(email, password, username);
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: username });
         await sendEmailVerification();
-        console.log('Updated profile');
+        // console.log('Updated profile');
         navigate('/home');
 
     };

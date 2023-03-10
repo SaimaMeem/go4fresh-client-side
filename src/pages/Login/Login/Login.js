@@ -23,9 +23,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        console.log(email, password);
         if (email && password) {
-            console.log(email, password);
             await signInWithEmailAndPassword(email, password);
         }
     };

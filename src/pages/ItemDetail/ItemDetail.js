@@ -21,7 +21,6 @@ const ItemDetail = () => {
         let newQuantity = parseInt(quantity) - 1;
         const newItem = { ...itemDetail, quantity: newQuantity.toString() }
         setItemDetail(newItem);
-        console.log(typeof quantity);
 
         toast.success(`One ${name} is delivered!`, {
             position: "top-right",
@@ -41,18 +40,16 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Success:', data);
+                // console.log('Success:', data);
             })
             .catch((error) => {
-                console.error('Error:', error);
+                // console.error('Error:', error);
             });
     }
     const addQuantity = (id) => {
         const added = document.getElementById('addQtyInput').value;
         document.getElementById('addQtyInput').value = '';
         let newQuantity = parseInt(quantity) + parseInt(added);
-        console.log(id);
-        console.log(newQuantity);
         const newItem = { ...itemDetail, quantity: newQuantity.toString() }
         setItemDetail(newItem);
 
@@ -65,7 +62,6 @@ const ItemDetail = () => {
             draggable: true,
             progress: undefined,
         });
-        // console.log(typeof quantity);
         fetch(`https://go4fresh.onrender.com/items/${id}`, {
             method: 'PUT',
             headers: {
@@ -75,10 +71,10 @@ const ItemDetail = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Success:', data);
+                // console.log('Success:', data);
             })
             .catch((error) => {
-                console.error('Error:', error);
+                // console.error('Error:', error);
             });
     }
     return (

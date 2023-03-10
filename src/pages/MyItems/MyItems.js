@@ -39,8 +39,6 @@ const MyItems = () => {
 
     }
     const submitDelete = (id, name) => {
-        // console.log("clicked", id);
-
         toast.success(`${name} is deleted from the stock!`, {
             position: "top-right",
             autoClose: 5000,
@@ -61,7 +59,6 @@ const MyItems = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
-                    console.log("deletion successful");
                     const rest = items.filter(item => item._id !== id);
                     setItems(rest);
                 }

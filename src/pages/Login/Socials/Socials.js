@@ -26,7 +26,7 @@ const Socials = () => {
     if (token) {
         // navigate('/home');
         navigate(from, { replace: true });
-        console.log(googleUser || facebookUser);
+        // console.log(googleUser || facebookUser);
     }
     return (
         <div className='flex  justify-center '>

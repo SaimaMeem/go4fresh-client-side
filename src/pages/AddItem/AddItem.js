@@ -35,7 +35,6 @@ const AddItem = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('Success:', data);
                 if (data.insertedId) {
                     toast.success(`New Item Added Successfully`, {
                         position: "top-right",
