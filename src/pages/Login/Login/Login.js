@@ -8,6 +8,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import loginImage from '../../../images/login.png';
 import { toast } from 'react-toastify';
 import useToken from '../../../hooks/useToken';
+import Loader from '../../shared/Loader/Loader';
 const Login = () => {
     const [signInWithEmailAndPassword, emailUser, emailLoading, emailError] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
@@ -35,10 +36,7 @@ const Login = () => {
         divElement = <p className='text-red-600 font-semibold'>Error: {emailError?.message}</p>;
     }
     if (emailLoading) {
-        divElement = <div className=" spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
-" role="status">
-            <span className="visually-hidden">Loading...</span>
-        </div>
+        divElement = <Loader/>
     }
     const resetPassword = async () => {
         const email = emailRef.current.value;

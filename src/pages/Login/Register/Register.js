@@ -6,6 +6,7 @@ import registerImage from '../../../images/register.jpg';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile, useSendEmailVerification } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import useToken from '../../../hooks/useToken';
+import Loader from '../../shared/Loader/Loader';
 const Register = () => {
     const navigate = useNavigate();
     // const location = useLocation();
@@ -38,9 +39,7 @@ const Register = () => {
         divElement = <p className='text-redd font-semibold'>Error: {error?.message}</p>;
     }
     if (loading || updating) {
-        divElement = <div className=" spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
-        " role="status">
-        </div>
+        divElement = <Loader/>
     }
     return (
         <section className='pt-36 pb-28 font-medium'>

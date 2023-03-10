@@ -9,22 +9,18 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
+import Loader from '../Loader/Loader';
 const Header = () => {
     const navigate = useNavigate();
-    const [user,loading] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const logOut = () => {
         signOut(auth);
         navigate('/login');
     };
-    if(loading){
+    if (loading) {
         <section className="pt-36 pb-28">
-        <div className="text-center">
-            <div className="spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
-" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div>
-        </div>
-    </section>
+            <Loader />
+        </section>
     }
     return (
         <div className='relative'>
@@ -102,10 +98,10 @@ const Header = () => {
                                         role="button"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="false">
-                                   
+
                                         <div className='md:inline-block hidden cursor-pointer'> &nbsp;&nbsp;{user?.displayName}&nbsp;&nbsp;</div>
                                         {user?.photoURL ? <img className="h-8 w-8 rounded-full" src={user?.photoURL} alt="" />
-                                        : <FontAwesomeIcon icon={faUserCircle} className='h-5 w-5'></FontAwesomeIcon> 
+                                            : <FontAwesomeIcon icon={faUserCircle} className='h-5 w-5'></FontAwesomeIcon>
                                         }&nbsp; &nbsp;
                                         <FontAwesomeIcon className='hidden lg:block' icon={faCaretDown}></FontAwesomeIcon>
                                     </Link>

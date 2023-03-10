@@ -64,6 +64,7 @@ const MyItems = () => {
                 }
             })
     };
+    console.log(items);
     return (
         <section>
             <PageTitle title={'My Items'}></PageTitle>

@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import useToken from '../../../hooks/useToken';
 import google from '../../../images/google-logo.png';
+import Loader from '../../shared/Loader/Loader';
 const Socials = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithFacebook, facebookUser, facebookLoading, facebookError] = useSignInWithFacebook(auth);
@@ -18,10 +19,7 @@ const Socials = () => {
         divElement = <p className='text-red-600 font-semibold'>Error: {googleError?.message} {facebookError?.message}</p>;
     }
     if (googleLoading || facebookLoading) {
-        divElement = <div className=" spinner-border animate-spin inline-block w-10 h-10 border-4 rounded-full text-yellow font-bold
-        " role="status">
-            <span className="visually-hidden">Loading...</span>
-        </div>
+        divElement = <Loader/>
     }
     if (token) {
         // navigate('/home');
