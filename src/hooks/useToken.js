@@ -11,7 +11,7 @@ const useToken = (user) => {
     // console.log(email);
     useEffect(() => {
         if (email) {
-            fetch('https://calm-reef-60814.herokuapp.com/login', {
+            fetch('https://go4fresh.onrender.com/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const useToken = (user) => {
                 });
         }
     }
-        , [user, token,email]);
+        , [user, token, email]);
     return (
         [token, setToken]
     );

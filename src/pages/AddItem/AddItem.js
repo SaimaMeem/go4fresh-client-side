@@ -26,7 +26,7 @@ const AddItem = () => {
             description: description,
             email: email
         }
-        fetch('https://calm-reef-60814.herokuapp.com/items', {
+        fetch('https://go4fresh.onrender.com/items', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ const AddItem = () => {
             <h3 className="leading-tight text-2xl font-bold text-dark-blue pb-5">  Add New  Item</h3>
             <form action="" onSubmit={handleAddItem}>
                 <div className="flex flex-col justify-center items-center mx-10">
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-2  justify-center items-center w-full sm:w-4/5 lg:w3/5'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-2  justify-center items-center w-full sm:w-4/5 lg:w3/5'>
                         <div className="form-floating m-3">
                             <input type="text" className="form-control block w-full px-3 py-1.5 text-base font-medium text-black bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="name" placeholder="name" required />
                             <label htmlFor="name" className="text-gray-700">Item Name</label>

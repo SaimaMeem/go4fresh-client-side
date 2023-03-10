@@ -32,7 +32,7 @@ const ManageInventories = () => {
             draggable: true,
             progress: undefined,
         });
-        const url = `https://calm-reef-60814.herokuapp.com/items/${id}`;
+        const url = `https://go4fresh.onrender.com/items/${id}`;
         fetch(url, {
             method: "DELETE"
         })

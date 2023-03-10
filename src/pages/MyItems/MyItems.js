@@ -17,7 +17,7 @@ const MyItems = () => {
         navigate(`/fruits&vegetables/${id}`)
     }
     useEffect(() => {
-        fetch(`https://calm-reef-60814.herokuapp.com/myitems?email=${email}`, {
+        fetch(`https://go4fresh.onrender.com/myitems?email=${email}`, {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const MyItems = () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
-    }, [items,email]);
+    }, [items, email]);
     let count = 1;
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);
@@ -50,7 +50,7 @@ const MyItems = () => {
             draggable: true,
             progress: undefined,
         });
-        const url = `https://calm-reef-60814.herokuapp.com/items/${id}`;
+        const url = `https://go4fresh.onrender.com/items/${id}`;
         fetch(url, {
             method: "DELETE",
             headers: {

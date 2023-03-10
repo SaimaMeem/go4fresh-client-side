@@ -10,10 +10,10 @@ const ItemDetail = () => {
     const { itemId } = useParams();
     const [itemDetail, setItemDetail] = useState([]);
     useEffect(() => {
-        fetch(`https://calm-reef-60814.herokuapp.com/items/${itemId}`)
+        fetch(`https://go4fresh.onrender.com/items/${itemId}`)
             .then(res => res.json())
             .then(data => setItemDetail(data));
-    }, [itemDetail,itemId]);
+    }, [itemDetail, itemId]);
     const { _id, name, price, image, description, supplier_name } = itemDetail;
     let { quantity } = itemDetail;
 
@@ -32,7 +32,7 @@ const ItemDetail = () => {
             draggable: true,
             progress: undefined,
         });
-        fetch(`https://calm-reef-60814.herokuapp.com/items/${id}`, {
+        fetch(`https://go4fresh.onrender.com/items/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ const ItemDetail = () => {
             progress: undefined,
         });
         // console.log(typeof quantity);
-        fetch(`https://calm-reef-60814.herokuapp.com/items/${id}`, {
+        fetch(`https://go4fresh.onrender.com/items/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
