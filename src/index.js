@@ -8,11 +8,13 @@ import 'tw-elements';
 import 'flowbite';
 import { HelmetProvider } from 'react-helmet-async';
 import 'react-toastify/dist/ReactToastify.css';
+import ScrollToTop from './pages/shared/ScrollToTop/ScrollToTop';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <HelmetProvider>
   <BrowserRouter>
+  <ScrollToTop/>
     <React.StrictMode>
       <App />
     </React.StrictMode>
