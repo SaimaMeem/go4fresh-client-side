@@ -24,11 +24,10 @@ const ManageInventories = () => {
     }
     useEffect(() => {
         setLoading(true);
-        console.log(items);
         setTimeout(() => {
             setLoading(false);
         }, 1000);
-    }, [])
+    }, []);
 
     const submitDelete = (id, name) => {
         toast.success(`${name} is deleted from the stock!`, {
