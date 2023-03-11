@@ -1,16 +1,19 @@
 import { faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useItems from '../../hooks/useItems';
 import Modal from '../Modal/Modal';
+import Loader from '../shared/Loader/Loader';
 import PageTitle from '../shared/PageTitle/PageTitle';
 
 const ManageInventories = () => {
     const [items, setItems] = useItems();
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const navigateToUpdateStock = (id) => {
         navigate(`/fruits&vegetables/${id}`)
@@ -18,8 +21,15 @@ const ManageInventories = () => {
     const displayModal = (id, name) => {
         setId(id);
         setName(name);
-
     }
+    useEffect(() => {
+        setLoading(true);
+        console.log(items);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, [])
+
     const submitDelete = (id, name) => {
         toast.success(`${name} is deleted from the stock!`, {
             position: "top-right",
@@ -82,31 +92,31 @@ const ManageInventories = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {items.length !== 0 ?
+                                        {loading ? <tr><td colSpan="6" className='py-5 font-bold' ><Loader /></td></tr> :
+                                            items.length ?
+                                                items.map(item =>
+                                                    <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
+                                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
+                                                        <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2 cursor-pointer" type='button' onClick={() => { navigateToUpdateStock(item._id) }}>
+                                                            <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
+                                                        </td>
+                                                        <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                            ${item.price}
+                                                        </td>
+                                                        <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                            {item.quantity}
+                                                        </td>
+                                                        <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                            {item.supplier_name}
+                                                        </td>
+                                                        <td className="text-lg font-medium px-6 py-4 whitespace-nowrap border-r text-redd">
+                                                            <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id, item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
+                                                        </td>
 
-                                            items.map(item =>
-                                                <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
-                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
-                                                    <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2 cursor-pointer" type='button' onClick={() => { navigateToUpdateStock(item._id) }}>
-                                                        <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        ${item.price}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        {item.quantity}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        {item.supplier_name}
-                                                    </td>
-                                                    <td className="text-lg font-medium px-6 py-4 whitespace-nowrap border-r text-redd">
-                                                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id, item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
-                                                    </td>
-
+                                                    </tr>
+                                                ) : <tr>
+                                                    <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
                                                 </tr>
-                                            ) : <tr>
-                                                <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
-                                            </tr>
                                         }
                                     </tbody>
                                 </table>

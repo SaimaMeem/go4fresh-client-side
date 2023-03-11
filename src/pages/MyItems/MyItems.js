@@ -7,9 +7,11 @@ import PageTitle from '../shared/PageTitle/PageTitle';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../shared/Loader/Loader';
 
 const MyItems = () => {
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [user] = useAuthState(auth);
     const email = user?.email;
     const navigate = useNavigate();
@@ -17,6 +19,7 @@ const MyItems = () => {
         navigate(`/fruits&vegetables/${id}`)
     }
     useEffect(() => {
+        setLoading(true);
         fetch(`https://go4fresh.onrender.com/myitems?email=${email}`, {
             method: "GET",
             headers: {
@@ -25,18 +28,21 @@ const MyItems = () => {
             },
         })
             .then(res => res.json())
-            .then(data => setItems(data))
+            .then(data => {
+                setLoading(false);
+                setItems(data);
+            })
             .catch((error) => {
+                setLoading(false);
                 console.error('Error:', error);
             });
-    }, [items, email]);
+    }, [email]);
     let count = 1;
     const [id, setId] = useState(null);
     const [name, setName] = useState(null);
     const displayModal = (id, name) => {
         setId(id);
         setName(name);
-
     }
     const submitDelete = (id, name) => {
         toast.success(`${name} is deleted from the stock!`, {
@@ -64,7 +70,6 @@ const MyItems = () => {
                 }
             })
     };
-    console.log(items);
     return (
         <section>
             <PageTitle title={'My Items'}></PageTitle>
@@ -100,31 +105,32 @@ const MyItems = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {items.length ?
+                                        {
+                                            loading ? <tr><td colSpan="6" className='py-5 font-bold' ><Loader/></td></tr> :
+                                                items.length ?
+                                                    items.map(item =>
+                                                        <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
+                                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
+                                                            <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2 cursor-pointer" type='button' onClick={() => { navigateToUpdateStock(item._id) }}>
+                                                                <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
+                                                            </td>
+                                                            <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                                ${item.price}
+                                                            </td>
+                                                            <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                                {item.quantity}
+                                                            </td>
+                                                            <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
+                                                                {item.supplier_name}
+                                                            </td>
+                                                            <td className="text-lg font-medium px-6 py-4 whitespace-nowrap border-r text-redd">
+                                                                <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id, item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
+                                                            </td>
 
-                                            items.map(item =>
-                                                <tr key={item._id} className="bg-white  transition duration-300 ease-in-out hover:bg-gray-100 border">
-                                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium border-r">{count++}</td>
-                                                    <td className="text-sm font-medium px-3 py-4 whitespace-nowrap border-r flex items-center justify-center gap-2 cursor-pointer" type='button' onClick={() => { navigateToUpdateStock(item._id) }}>
-                                                        <img className="rounded-lg h-12 w-12 object-cover hidden md:block" src={item.image} alt="" />  {item.name}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        ${item.price}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        {item.quantity}
-                                                    </td>
-                                                    <td className="text-sm font-medium px-6 py-4 whitespace-nowrap border-r">
-                                                        {item.supplier_name}
-                                                    </td>
-                                                    <td className="text-lg font-medium px-6 py-4 whitespace-nowrap border-r text-redd">
-                                                        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop" type='' onClick={() => { displayModal(item._id, item.name) }} ><FontAwesomeIcon icon={faTrash}></FontAwesomeIcon></button>
-                                                    </td>
-
-                                                </tr>
-                                            ) : <tr>
-                                                <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
-                                            </tr>
+                                                        </tr>
+                                                    ) : <tr>
+                                                        <td colSpan="6" className='py-5 font-bold' >No Items Available</td>
+                                                    </tr>
                                         }
                                     </tbody>
                                 </table>
