@@ -34,7 +34,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3  gap-2">
                     <div className="">
                         <h6 className="uppercase font-bold mb-4 flex justify-center">
-                           Customer Service
+                            Customer Service
                         </h6>
                         <p className="mb-4 flex justify-center">
                             <a href="#!" className="text-dark-blue">Contact Us</a>
