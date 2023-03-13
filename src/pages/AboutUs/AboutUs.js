@@ -6,11 +6,11 @@ const AboutUs = () => {
         <section className='pt-36 pb-28 font-medium'>
             <PageTitle title={'About Us'}></PageTitle>
             <h3 className="leading-tight text-3xl font-bold text-dark-blue pb-5">About Us</h3>
-            <div className='grid grid-cols-1 lg:grid-cols-2  justify-center w-auto  md:mx-20 items-center md:px-20 md:py-14  shadow-lg rounded-lg'>
-                <div className='w-full'>
+            <div className='grid grid-cols-1 lg:grid-cols-2  justify-center w-auto  md:mx-20 items-center md:py-14 md:shadow-lg md:rounded-lg'>
+                <div className='w-full pb-4 px-5'>
                     <img className='w-4/5 mx-auto object-cover' src={aboutUsImage} alt="" />
                 </div>
-                <div className="bg-white w-full text-left">
+                <div className="bg-white w-full text-justify px-4 pt-16 md:pt-6 lg:pr-10">
                     <p>Go4Fresh was founded in 2017 to integrate farm-to-fork and deliver customers safe & healthy produce at right price.
                         We connect fresh produce farmers to businesses through a collaborative approach.
                         <br></br>

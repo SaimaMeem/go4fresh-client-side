@@ -12,7 +12,7 @@ const Items = () => {
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 1200);
+        }, 1800);
     }, []);
     return (
         <section className='my-14' id='fruits&vegetables'>
