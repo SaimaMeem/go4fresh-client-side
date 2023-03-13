@@ -47,7 +47,7 @@ const Header = () => {
                     </div>
                     <div className="container-fluid">
                         <div className="collapse navbar-collapse flex-grow items-center justify-center" id="navbarSupportedContent">
-                            <ul className="navbar-nav flex flex-col list-style-none   absolute z-200 transition-all ul-items bg-off-white shadow-lg md:shadow-none">
+                            <ul className="navbar-nav flex flex-col list-style-none   absolute z-200 transition-all ul-items bg-off-white shadow-lg lg:shadow-none">
                                 <li className="nav-item p-2 relative w-max two hover:font-bold  active:bg-off-white-darker px-3 py-2 rounded-md">
                                     <Link className="nav-link text-dark-blue py-3" to='/home#banner'>Home</Link>
                                     <span className="absolute bottom-0.5 left-1/2 w-0 transition-all h-1 bg-lavender"></span>
